@@ -2,3 +2,4 @@
 /BrightcovePlayerSDK.framework
 .swiftpm
 .DS_Store
+/GoogleCast.framework

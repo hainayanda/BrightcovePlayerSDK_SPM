@@ -19,3 +19,14 @@ xcrun lipo -remove x86_64 ./BrightcoveGoogleCast/iphoneos/BrightcoveGoogleCast.f
 xcrun lipo -remove arm64 ./BrightcoveGoogleCast/iphonesim/BrightcoveGoogleCast.framework/BrightcoveGoogleCast -o ./BrightcoveGoogleCast/iphonesim/BrightcoveGoogleCast.framework/BrightcoveGoogleCast
 xcodebuild -create-xcframework -framework BrightcoveGoogleCast/iphoneos/BrightcoveGoogleCast.framework -framework BrightcoveGoogleCast/iphonesim/BrightcoveGoogleCast.framework -output "BrightcoveGoogleCast.xcframework"
 rm -rf BrightcoveGoogleCast
+
+# GoogleCast
+mkdir -p GoogleCast
+mkdir -p GoogleCast/iphoneos
+mkdir -p GoogleCast/iphonesim
+cp -R GoogleCast.framework GoogleCast/iphoneos/GoogleCast.framework
+cp -R GoogleCast.framework GoogleCast/iphonesim/GoogleCast.framework
+xcrun lipo -remove i386 -remove x86_64 -remove armv7 ./GoogleCast/iphoneos/GoogleCast.framework/GoogleCast -o ./GoogleCast/iphoneos/GoogleCast.framework/GoogleCast
+xcrun lipo -remove arm64 -remove i386 -remove armv7 ./GoogleCast/iphonesim/GoogleCast.framework/GoogleCast -o ./GoogleCast/iphonesim/GoogleCast.framework/GoogleCast
+xcodebuild -create-xcframework -framework GoogleCast/iphoneos/GoogleCast.framework -framework GoogleCast/iphonesim/GoogleCast.framework -output "GoogleCast.xcframework"
+rm -rf GoogleCast

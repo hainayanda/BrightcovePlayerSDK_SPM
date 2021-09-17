@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "BrightcoveSDK",
-            targets: ["BrightcovePlayerSDK", "BrightcoveGoogleCast"])
+            targets: ["BrightcovePlayerSDK", "BrightcoveGoogleCast", "GoogleCast"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,6 +23,10 @@ let package = Package(
         .binaryTarget(
             name: "BrightcoveGoogleCast",
             path: "BrightcoveGoogleCast.xcframework"
+        ),
+        .binaryTarget(
+            name: "GoogleCast",
+            path: "GoogleCast.xcframework"
         )
     ]
 )
